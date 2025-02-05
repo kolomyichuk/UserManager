@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.getuserwithretrofitmvi"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.getuserwithretrofitmvi"
@@ -40,7 +40,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.5"
     }
     packaging {
         resources {
@@ -50,7 +50,13 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.retrofit.retrofit)
+    implementation(libs.retrofit.converter)
+    implementation(libs.kotlinx.coroutines)
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.okhttp3.logging.interceptor)
+    implementation(libs.android.koin)
+    implementation(libs.koin.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
