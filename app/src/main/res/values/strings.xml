@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GetUserWithRetrofitMVI</string>
+    <string name="update_user">Update user</string>
 </resources>
