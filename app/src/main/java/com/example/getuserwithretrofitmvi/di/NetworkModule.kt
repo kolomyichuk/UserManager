@@ -16,7 +16,7 @@ fun provideOkhttpClient(): OkHttpClient {
         .build()
 }
 
-fun provideRetrofit(okHttpClient: OkHttpClient):Retrofit {
+fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
     return Retrofit.Builder()
         .baseUrl("https://dummyjson.com/")
         .client(okHttpClient)
@@ -24,7 +24,7 @@ fun provideRetrofit(okHttpClient: OkHttpClient):Retrofit {
         .build()
 }
 
-fun provideUserApi(retrofit: Retrofit):UserApi{
+fun provideUserApi(retrofit: Retrofit): UserApi {
     return retrofit.create(UserApi::class.java)
 }
 
