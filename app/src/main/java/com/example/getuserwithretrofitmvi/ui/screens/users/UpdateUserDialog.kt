@@ -1,4 +1,4 @@
-package com.example.getuserwithretrofitmvi.ui.components
+package com.example.getuserwithretrofitmvi.ui.screens.users
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

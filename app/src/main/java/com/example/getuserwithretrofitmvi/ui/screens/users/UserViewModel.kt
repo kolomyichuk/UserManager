@@ -1,11 +1,9 @@
-package com.example.getuserwithretrofitmvi.ui.viewmodel
+package com.example.getuserwithretrofitmvi.ui.screens.users
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.getuserwithretrofitmvi.data.model.User
 import com.example.getuserwithretrofitmvi.data.repository.UserRepository
-import com.example.getuserwithretrofitmvi.ui.intent.UserIntent
-import com.example.getuserwithretrofitmvi.ui.state.UserState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,4 +1,4 @@
-package com.example.getuserwithretrofitmvi.ui.screens
+package com.example.getuserwithretrofitmvi.ui.screens.users
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -20,10 +20,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.getuserwithretrofitmvi.ui.components.ShowCircularProgressIndicator
-import com.example.getuserwithretrofitmvi.ui.components.UserItem
-import com.example.getuserwithretrofitmvi.ui.intent.UserIntent
-import com.example.getuserwithretrofitmvi.ui.state.UserState
-import com.example.getuserwithretrofitmvi.ui.viewmodel.UserViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @Composable

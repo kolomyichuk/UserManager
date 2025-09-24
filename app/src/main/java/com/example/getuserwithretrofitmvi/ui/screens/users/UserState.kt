@@ -1,4 +1,4 @@
-package com.example.getuserwithretrofitmvi.ui.state
+package com.example.getuserwithretrofitmvi.ui.screens.users
 
 import com.example.getuserwithretrofitmvi.data.model.User
 
