@@ -9,7 +9,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class UserViewModel(private val repository: UserRepository) : ViewModel() {
+class UserViewModel(
+    private val repository: UserRepository
+) : ViewModel() {
 
     private val _state = MutableStateFlow<UserState>(UserState.Loading)
     val state: StateFlow<UserState> = _state.asStateFlow()
@@ -66,7 +68,7 @@ class UserViewModel(private val repository: UserRepository) : ViewModel() {
 
                 _state.value = UserState.Success(currentUsers)
             } catch (e: Exception) {
-                _state.value = UserState.Error("Error: Updating user")
+                _state.value = UserState.Error("Error: Updating user $e")
             }
         }
     }

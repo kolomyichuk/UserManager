@@ -22,10 +22,14 @@ import androidx.compose.ui.unit.dp
 import com.example.getuserwithretrofitmvi.data.model.User
 
 @Composable
-fun UserItem(user: User, onDelete: () -> Unit, onUpdate: (String, String) -> Unit) {
+fun UserItem(
+    user: User, onDelete: () -> Unit,
+    onUpdate: (String, String) -> Unit
+) {
     var showDialog by remember {
         mutableStateOf(false)
     }
+
     Card(
         modifier = Modifier
             .fillMaxWidth()

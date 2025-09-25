@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">GetUserWithRetrofitMVI</string>
     <string name="update_user">Update user</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">Error: %1$s</string>
+    <string name="search_user">Search User</string>
 </resources>

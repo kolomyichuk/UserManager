@@ -18,12 +18,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.getuserwithretrofitmvi.R
 import com.example.getuserwithretrofitmvi.ui.components.ShowCircularProgressIndicator
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun UserScreen(viewModel: UserViewModel = koinViewModel()) {
+fun UserScreen(
+    viewModel: UserViewModel = koinViewModel(),
+) {
     val state by viewModel.state.collectAsState()
     var searchQuery by remember {
         mutableStateOf("")
@@ -43,7 +47,7 @@ fun UserScreen(viewModel: UserViewModel = koinViewModel()) {
         OutlinedTextField(
             value = searchQuery,
             onValueChange = { searchQuery = it },
-            label = { Text(text = "Search User") })
+            label = { Text(text = stringResource(R.string.search_user)) })
 
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -62,7 +66,8 @@ fun UserScreen(viewModel: UserViewModel = koinViewModel()) {
                             user,
                             onDelete = { viewModel.dispatch(UserIntent.DeleteUser(user.id)) },
                             onUpdate = { firstName, lastName ->
-                                val updatedUser = user.copy(firstName = firstName, lastName = lastName)
+                                val updatedUser =
+                                    user.copy(firstName = firstName, lastName = lastName)
                                 viewModel.dispatch(UserIntent.UpdateUser(user.id, updatedUser))
                             }
                         )
@@ -70,7 +75,10 @@ fun UserScreen(viewModel: UserViewModel = koinViewModel()) {
                 }
             }
 
-            is UserState.Error -> Text(text = "Error: ${(state as UserState.Error).message}")
+            is UserState.Error -> Text(text = stringResource(
+                R.string.error,
+                (state as UserState.Error).message
+            ))
         }
     }
 }

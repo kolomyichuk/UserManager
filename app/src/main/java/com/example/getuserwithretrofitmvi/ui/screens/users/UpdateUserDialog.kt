@@ -38,25 +38,25 @@ fun UpdateUserDialog(
             Column {
                 OutlinedTextField(value = firstName, onValueChange = { firstName = it }, label = {
                     Text(
-                        text = "Firstname"
+                        text = stringResource(R.string.firstname)
                     )
                 })
                 Spacer(modifier = Modifier.height(8.dp))
                 OutlinedTextField(value = lastName, onValueChange = { lastName = it }, label = {
                     Text(
-                        text = "Lastname"
+                        text = stringResource(R.string.lastname)
                     )
                 })
             }
         },
         confirmButton = {
             Button(onClick = { onUpdate(firstName, lastName) }) {
-                Text(text = "Update")
+                Text(text = stringResource(R.string.update))
             }
         },
         dismissButton = {
             Button(onClick = { onDismiss() }) {
-                Text(text = "Cancel")
+                Text(text = stringResource(R.string.cancel))
             }
         })
 }

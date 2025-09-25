@@ -37,26 +37,4 @@ class TopLevelBackStack<T : NavKey>(private val startKey: T) {
         topLevelKey = key
         updateBackStack()
     }
-
-    fun add(key: T) {
-        topLevelBackStacks[topLevelKey]?.add(key)
-        updateBackStack()
-    }
-
-    fun removeLast() {
-        val currentStack = topLevelBackStacks[topLevelKey] ?: return
-
-        if (currentStack.size > 1) {
-            currentStack.removeLastOrNull()
-        } else if (topLevelKey != startKey) {
-            topLevelKey = startKey
-        }
-        updateBackStack()
-    }
-
-    fun replaceStack(vararg keys: T) {
-        topLevelBackStacks[topLevelKey] = mutableStateListOf(*keys)
-        updateBackStack()
-    }
-
 }
