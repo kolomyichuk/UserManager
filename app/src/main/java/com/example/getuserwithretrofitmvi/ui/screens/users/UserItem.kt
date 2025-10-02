@@ -1,4 +1,4 @@
-package com.example.getuserwithretrofitmvi.ui.components
+package com.example.getuserwithretrofitmvi.ui.screens.users
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -22,10 +22,15 @@ import androidx.compose.ui.unit.dp
 import com.example.getuserwithretrofitmvi.data.model.User
 
 @Composable
-fun UserItem(user: User, onDelete: () -> Unit, onUpdate: (String, String) -> Unit) {
+fun UserItem(
+    user: User,
+    onDelete: () -> Unit,
+    onUpdate: (String, String) -> Unit
+) {
     var showDialog by remember {
         mutableStateOf(false)
     }
+
     Card(
         modifier = Modifier
             .fillMaxWidth()

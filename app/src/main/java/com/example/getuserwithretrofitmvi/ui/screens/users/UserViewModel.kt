@@ -1,17 +1,17 @@
-package com.example.getuserwithretrofitmvi.ui.viewmodel
+package com.example.getuserwithretrofitmvi.ui.screens.users
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.getuserwithretrofitmvi.data.model.User
 import com.example.getuserwithretrofitmvi.data.repository.UserRepository
-import com.example.getuserwithretrofitmvi.ui.intent.UserIntent
-import com.example.getuserwithretrofitmvi.ui.state.UserState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class UserViewModel(private val repository: UserRepository) : ViewModel() {
+class UserViewModel(
+    private val repository: UserRepository
+) : ViewModel() {
 
     private val _state = MutableStateFlow<UserState>(UserState.Loading)
     val state: StateFlow<UserState> = _state.asStateFlow()
@@ -68,7 +68,7 @@ class UserViewModel(private val repository: UserRepository) : ViewModel() {
 
                 _state.value = UserState.Success(currentUsers)
             } catch (e: Exception) {
-                _state.value = UserState.Error("Error: Updating user")
+                _state.value = UserState.Error("Error: Updating user $e")
             }
         }
     }

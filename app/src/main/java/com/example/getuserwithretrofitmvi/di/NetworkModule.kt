@@ -27,4 +27,3 @@ fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
 fun provideUserApi(retrofit: Retrofit): UserApi {
     return retrofit.create(UserApi::class.java)
 }
-
