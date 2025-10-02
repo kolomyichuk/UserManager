@@ -23,7 +23,8 @@ import com.example.getuserwithretrofitmvi.data.model.User
 
 @Composable
 fun UserItem(
-    user: User, onDelete: () -> Unit,
+    user: User,
+    onDelete: () -> Unit,
     onUpdate: (String, String) -> Unit
 ) {
     var showDialog by remember {
