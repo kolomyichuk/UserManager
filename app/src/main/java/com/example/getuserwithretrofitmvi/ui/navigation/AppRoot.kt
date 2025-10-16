@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import com.example.getuserwithretrofitmvi.ui.components.BottomNavigationBar
+import com.example.getuserwithretrofitmvi.ui.screens.log.LogScreen
 import com.example.getuserwithretrofitmvi.ui.screens.player.PlayerScreen
 import com.example.getuserwithretrofitmvi.ui.screens.users.UserScreen
 
@@ -32,6 +33,9 @@ fun AppRoot() {
                 }
                 entry<Screen.Player> {
                     PlayerScreen()
+                }
+                entry<Screen.LogScreen> {
+                    LogScreen()
                 }
             }
         )

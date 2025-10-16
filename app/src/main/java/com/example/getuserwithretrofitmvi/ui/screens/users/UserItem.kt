@@ -19,7 +19,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.getuserwithretrofitmvi.data.model.User
+import com.example.getuserwithretrofitmvi.data.network.model.User
 
 @Composable
 fun UserItem(

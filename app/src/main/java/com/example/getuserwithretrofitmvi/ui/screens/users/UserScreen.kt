@@ -61,24 +61,34 @@ fun UserScreen(
                     )
                 }
                 LazyColumn {
-                    items(users) { user ->
+                    items(
+                        items = users,
+                        key = { user ->
+                            user.id
+                        }) { user ->
                         UserItem(
                             user,
-                            onDelete = { viewModel.dispatch(UserIntent.DeleteUser(user.id)) },
+                            onDelete = {
+                                viewModel.dispatch(UserIntent.DeleteUser(user.id))
+                            },
                             onUpdate = { firstName, lastName ->
                                 val updatedUser =
                                     user.copy(firstName = firstName, lastName = lastName)
-                                viewModel.dispatch(UserIntent.UpdateUser(user.id, updatedUser))
+                                viewModel.dispatch(
+                                    UserIntent.UpdateUser(user.id, updatedUser)
+                                )
                             }
                         )
                     }
                 }
             }
 
-            is UserState.Error -> Text(text = stringResource(
-                R.string.error,
-                (state as UserState.Error).message
-            ))
+            is UserState.Error -> Text(
+                text = stringResource(
+                    R.string.error,
+                    (state as UserState.Error).message
+                )
+            )
         }
     }
 }

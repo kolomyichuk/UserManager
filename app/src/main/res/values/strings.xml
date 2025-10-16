@@ -7,4 +7,6 @@
     <string name="cancel">Cancel</string>
     <string name="error">Error: %1$s</string>
     <string name="search_user">Search User</string>
+    <string name="create_log">Create Log</string>
+    <string name="empty_list">Empty List</string>
 </resources>
