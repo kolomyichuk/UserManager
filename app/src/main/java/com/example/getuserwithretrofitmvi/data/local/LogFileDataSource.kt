@@ -23,7 +23,9 @@ class LogFileDataSource(
 
     suspend fun readLogs(): List<String> = withContext(Dispatchers.IO) {
         if (!archiveFile.exists()) return@withContext emptyList()
-        archiveFile.readLines().filter { it.isNotBlank() }
+        archiveFile.readLines()
+            .filter { it.isNotBlank() }
+            .reversed()
     }
 
     suspend fun rotateLogs() = withContext(Dispatchers.IO) {

@@ -3,7 +3,6 @@ package com.example.getuserwithretrofitmvi.ui.screens.log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.getuserwithretrofitmvi.data.repository.LogRepository
-import com.example.getuserwithretrofitmvi.data.worker.LogEventBus
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -20,8 +19,7 @@ class LogViewModel(
 
     init {
         viewModelScope.launch {
-            LogEventBus.logRotated.collect {
-                val logs = withContext(Dispatchers.IO) { logRepository.read() }
+            logRepository.logs.collect { logs ->
                 _uiState.value = _uiState.value.copy(logs = logs)
             }
         }
@@ -50,7 +48,7 @@ class LogViewModel(
 
     private fun loadLogs() {
         viewModelScope.launch(Dispatchers.IO) {
-            val logs = logRepository.read()
+            val logs = logRepository.read().reversed()
             _uiState.value = _uiState.value.copy(logs = logs)
         }
     }

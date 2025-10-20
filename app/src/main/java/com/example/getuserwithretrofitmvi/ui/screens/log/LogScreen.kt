@@ -56,7 +56,7 @@ fun LogScreen(
                     }
                 }
             } else {
-                items(items = uiState.logs.reversed()) { log ->
+                items(items = uiState.logs) { log ->
                     Text(text = log, modifier = Modifier.padding(vertical = 2.dp))
                 }
             }

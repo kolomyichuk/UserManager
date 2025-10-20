@@ -21,7 +21,6 @@ class LogWorker(
 
     override suspend fun doWork(): Result {
         logRepository.rotate()
-        LogEventBus.logRotated.emit(Unit)
         return Result.success()
     }
 
