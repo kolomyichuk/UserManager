@@ -40,7 +40,7 @@ class LogWorker(
 
             WorkManager.getInstance(context).enqueueUniquePeriodicWork(
                 "LogRotation",
-                ExistingPeriodicWorkPolicy.REPLACE,
+                ExistingPeriodicWorkPolicy.KEEP,
                 request
             )
         }
