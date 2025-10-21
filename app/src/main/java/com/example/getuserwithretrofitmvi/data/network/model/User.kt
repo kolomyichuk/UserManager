@@ -1,4 +1,4 @@
-package com.example.getuserwithretrofitmvi.data.model
+package com.example.getuserwithretrofitmvi.data.network.model
 
 data class User(
     val id: Int,

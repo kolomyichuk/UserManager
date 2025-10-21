@@ -1,7 +1,7 @@
 package com.example.getuserwithretrofitmvi.data.network
 
-import com.example.getuserwithretrofitmvi.data.model.User
-import com.example.getuserwithretrofitmvi.data.model.UserResponse
+import com.example.getuserwithretrofitmvi.data.network.model.User
+import com.example.getuserwithretrofitmvi.data.network.model.UserResponse
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET

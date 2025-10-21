@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.getuserwithretrofitmvi.R
-import com.example.getuserwithretrofitmvi.data.model.User
+import com.example.getuserwithretrofitmvi.data.network.model.User
 
 @Composable
 fun UpdateUserDialog(

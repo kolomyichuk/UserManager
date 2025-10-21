@@ -1,6 +1,6 @@
 package com.example.getuserwithretrofitmvi.ui.screens.users
 
-import com.example.getuserwithretrofitmvi.data.model.User
+import com.example.getuserwithretrofitmvi.data.network.model.User
 
 sealed class UserState {
     data object Loading : UserState()

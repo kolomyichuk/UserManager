@@ -34,12 +34,14 @@ class PlayerViewModel(
             }
 
             is PlayerIntent.Rewind -> {
-                val newPosition = (player.currentPosition - 10_000).coerceAtLeast(minimumValue = 0)
+                val newPosition = (player.currentPosition - 10_000)
+                    .coerceAtLeast(minimumValue = 0)
                 player.seekTo(newPosition)
             }
 
             is PlayerIntent.Forward -> {
-                val newPosition = (player.currentPosition + 10_000).coerceAtMost(player.duration)
+                val newPosition = (player.currentPosition + 10_000)
+                    .coerceAtMost(player.duration)
                 player.seekTo(newPosition)
             }
 

@@ -2,7 +2,7 @@ package com.example.getuserwithretrofitmvi.ui.screens.users
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.getuserwithretrofitmvi.data.model.User
+import com.example.getuserwithretrofitmvi.data.network.model.User
 import com.example.getuserwithretrofitmvi.data.repository.UserRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
